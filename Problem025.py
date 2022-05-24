@@ -1,31 +1,29 @@
 '''
 Created on Jan 27, 2019
 
-@author: JimYi
+@author: Jim Yin
 '''
 
 
-def fibbonacci_gen(n):
-    counter = 0
+def fibbonacci_gen():
     a = 0
     b = 1
-    while counter < n:
+    while True:
         a, b = b, a+b
-        counter += 1
         yield a
 
 def number_of_digit(n):
     return len(str(n))
 
-
-def fibbonacci_first(n):
+def fibbonacci_first(ndigit):
     counter01 = 0     
-    for x in fibbonacci_gen(100000):
+    for x in fibbonacci_gen():
         counter01 += 1
-        if number_of_digit(x) == n:
-            return counter01
+        if number_of_digit(x) >= ndigit:
+            print(counter01)
+            break
 
-print(fibbonacci_first(1000))
+fibbonacci_first(1000)
     
 ''' 
 4782
