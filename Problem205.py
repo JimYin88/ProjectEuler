@@ -1,7 +1,7 @@
 '''
 Created on May 28, 2022
 
-@author: JimYi
+@author: Jim Yin
 '''
 
 '''
