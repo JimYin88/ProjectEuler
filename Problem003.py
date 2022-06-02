@@ -1,9 +1,8 @@
 '''
 Created on Jan 27, 2019
 
-@author: JimYi
+@author: Jim Yin
 '''
-
 
 '''
 The prime factors of 13195 are 5, 7, 13 and 29.
@@ -23,4 +22,6 @@ if __name__ == '__main__':
 
 print(max(result))
 
-    
+'''
+6857
+'''
