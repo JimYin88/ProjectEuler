@@ -1,21 +1,15 @@
 '''
 Created on Jan 27, 2019
 
-@author: JimYin
+@author: Jim Yin
 '''
 
-
-def palindrome(n):
-    s = str(n)
-    if s == s[::-1]:
-        return True
-    else:
-        return False
-    
+def palin(n):
+    return str(n) == str(n)[::-1]
 
 if __name__ == '__main__':
-    l = [x * y for x in range(100,1000) for y in range(100,1000) if palindrome(x*y)]
+    print(max(x * y for x in range(100,1000) for y in range(100,1000) if palin(x*y)))
 
-print(max(l))
-
-    
+'''
+906609
+'''    
