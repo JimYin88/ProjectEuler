@@ -4,23 +4,37 @@ Created on Jan 27, 2019
 @author: Jim Yin
 '''
 
-prime_numbers = [2]
+import math
 
-def prime_gen(nth_term):
-    prime_number_count = 1
-    while prime_number_count < nth_term:
-        for i in range(3, 1000000000000000, 2):
-            for j in range(2, i):
-                if i % j == 0:
-                    break
-            else:
-                prime_numbers.append(i)
-                prime_number_count += 1
-    return prime_numbers
+def prime_nth_term(n):
+    if n == 1:
+        return 2
+
+    if n == 2:
+        return 3
+
+    target_num = 5
+    primecount = 2
+
+    while primecount < n:
+        isprime = True
+        
+        for x in range(3, int(math.sqrt(target_num)) + 1, 2):
+            if target_num % x == 0: 
+                isprime = False
+                break
+        
+        if isprime:
+            primecount += 1
+        if primecount == n:
+            return target_num
+        
+        target_num += 2
 
 
-if __name__ == '__main__':
-    result =  prime_gen(3)
 
-print(result)
+print(prime_nth_term(10001))
 
+'''
+104743
+'''

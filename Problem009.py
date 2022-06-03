@@ -1,7 +1,7 @@
 '''
 Created on Jan 27, 2019
 
-@author: JimYi
+@author: Jim Yin
 '''
 
 
@@ -18,12 +18,9 @@ def triplet():
         for j in range(i,500):
             k = (i*i + j*j)**0.5
             if i + j + k == 1000:
-                return i*j*k
+                return int(i*j*k)
         
-
-x = triplet()
-print(x)
-
+print(triplet())
 
 '''
 31875000

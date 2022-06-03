@@ -1,13 +1,20 @@
 '''
 Created on Jan 27, 2019
 
-@author: JimYi
+@author: Jim Yin
 '''
 
 def isPrime(n):
-    for i in range(2,int(n**0.5)+1):
-        if n%i==0:
-            return False
+    if n == 1 or n == 4:
+        return False 
+    elif n == 2 or n == 3:
+        return True
+    elif n % 2 == 0:
+        return False
+    else:
+        for i in range(3, int(n**0.5)+1, 2):
+            if n%i==0:
+                return False
     return True
 
 def prime_gen(upper_limit):
@@ -23,9 +30,8 @@ def prime_gen(upper_limit):
             results += 0
     return results
             
-x = prime_gen(2000000)
 
-print(x)
+print(sum((i for i in range(5, 2000000, 2) if isPrime(i)), 5))
 
 '''
 142913828922
