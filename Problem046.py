@@ -1,43 +1,59 @@
 '''
 Created on Feb 2, 2019
 
-@author: JimYi
+@author: Jim Yin
 '''
 
-def isprime(n):
-    """check if integer n is a prime"""
-    # range starts with 2 and only needs to go up the squareroot of n
-    if n == 2:
-        return True
-    if n % 2 == 0:
-        return False
-    for x in range(3, int(n**0.5)+1, 2):
-        if n % x == 0:
-            return False
-    return True
+import math
 
+def prime_gen(lowerlimit, upperlimit):
+    num = max(2, lowerlimit)
+    if num == 2:
+        yield num
+        num += 1
 
-def goldbach_gen(n):
-    goldbach_num = 1
-    while goldbach_num <= n:
-        goldbach_num += 2
-        if isprime(goldbach_num) == False:
-            yield goldbach_num
+    if num == 3:
+        yield num
+        num += 2
         
-y = goldbach_gen(100)
-print(next(y))
-print(next(y))
-print(next(y))
-print(next(y))
-print(next(y))
-print(next(y))
-print(next(y))
-print(next(y))
-print(next(y))
-print(next(y))
-print(next(y))
+    if num % 2 == 0:
+        num += 1
 
-print(isprime(99))
+    while num < upperlimit:
+        isprime = True
+        
+        for x in range(3, int(math.sqrt(num)) + 1, 2):
+            if num % x == 0: 
+                isprime = False
+                break
+        
+        if isprime:
+            yield num
+        
+        num += 2
 
+prime_list = [x for x in prime_gen(2, 10**5)]
 
+def odd_composite(num):
+    if num in prime_list:
+        return False
+    for p in prime_list:
+        if p > num:
+            return True
+        for i in range(1, int(math.sqrt(num/2)+1)):
+            if p + 2*i**2 == num:
+                return False
+ 
+def find_smallest_odd_composite():
+    num = 7
+    while True:
+        if odd_composite(num):
+            return num
+        else:
+            num += 2
 
+print(find_smallest_odd_composite())
+
+'''
+5777
+'''
