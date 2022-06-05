@@ -5,6 +5,8 @@ Created on May 31, 2022
 '''
 
 import math
+import time
+time_start = time.perf_counter()
 
 def prime_gen(lowerlimit, upperlimit):
     num = max(2, lowerlimit)
@@ -54,3 +56,9 @@ print(max_prime)
 997651
 '''
 
+time_end = time.perf_counter()
+print(f'time taken = {time_end - time_start} sec')
+
+'''
+time taken = 3.6460005 sec
+'''

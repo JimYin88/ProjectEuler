@@ -13,13 +13,13 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 if __name__ == '__main__':
     result = 0
-    item1 = 1
-    item2 = 2
+    a = 1
+    b = 2
     result = 2
-    while item1 <= 4000000:
-        item2, item1 = item2 + item1, item2
-        if item2 % 2 == 0:
-            result += item2
+    while a <= 4000000:
+        b, a = b + a, b
+        if b % 2 == 0:
+            result += b
 
 print(result)
 
