@@ -17,11 +17,26 @@ The sum of these numbers is 1634 + 8208 + 9474 = 19316.
 Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
 '''
 
+import time
+start_time = time.perf_counter()
+
+
 def fifth_powers_of_digits(n):
     return n == sum(int(i)**5 for i in str(n))
 
-print(sum(i for i in range(2, 6*9**5) if fifth_powers_of_digits(i)))
+def main():
+    print(sum(i for i in range(2, 6*9**5) if fifth_powers_of_digits(i)))
 
+if __name__ == '__main__':
+    main()
+     
 '''
 443839
+'''
+    
+end_time = time.perf_counter()
+print(f'Time taken = {end_time - start_time} sec')
+
+'''
+Time taken = 1.0630138999999998 sec
 '''
