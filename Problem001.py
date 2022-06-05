@@ -5,5 +5,8 @@ Created on Jan 24, 2019
 '''
 
 if __name__ == '__main__':
-    result = sum([x for x in range(1000) if x % 5 == 0 or x % 3 == 0])
-    print(result)
+    print(sum([x for x in range(1000) if x % 5 == 0 or x % 3 == 0]))
+
+'''
+233168
+'''

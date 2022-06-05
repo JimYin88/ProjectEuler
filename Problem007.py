@@ -5,6 +5,9 @@ Created on Jan 27, 2019
 '''
 
 import math
+import time
+
+time_start = time.perf_counter()
 
 def prime_nth_term(n):
     if n == 1:
@@ -31,10 +34,15 @@ def prime_nth_term(n):
         
         target_num += 2
 
-
-
 print(prime_nth_term(10001))
 
 '''
 104743
+'''
+
+time_end = time.perf_counter()
+print(f"time taken = {time_end-time_start} sec")
+
+'''
+time taken 0.12167109999999999 sec
 '''
