@@ -5,7 +5,7 @@ Created on Jun 3, 2022
 '''
 
 import time
-time_start = time.time()
+time_start = time.perf_counter()
 
 def find_permutation(max_x):
     perm_storage = {}
@@ -27,9 +27,9 @@ for i in p:
 127035954683
 '''
 
-time_end = time.time()
-print("time taken", time_end-time_start)
+time_end = time.perf_counter()
+print(f"time taken = {time_end - time_start} sec")
 
 '''
-time taken 7.446806192398071
+time taken = 7.3882631 sec
 '''  

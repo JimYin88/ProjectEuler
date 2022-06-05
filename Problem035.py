@@ -34,8 +34,6 @@ def prime_gen(lowerlimit, upperlimit):
 
 prime_list = [x for x in prime_gen(2, 10**6)]
 
-
-
 def circularprime(n):
     for i in range(len(str(n))):
         if int(str(n)[i:]+str(n)[0:i]) not in prime_list:

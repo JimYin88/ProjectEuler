@@ -7,8 +7,7 @@ Created on Jun 3, 2022
 import math
 import time
 
-time_start = time.time()
-
+time_start = time.perf_counter()
 
 def is_prime(n):
     if n == 1:
@@ -29,12 +28,12 @@ def find_spiral_primes():
     number_nonprime = 1
     
     while True:
-        lower_right = [layer**2]
-        lower_left = [layer**2 - layer + 1]
-        upper_left = [layer**2 - 2*layer + 2]
-        upper_right = [layer**2 - 3*layer + 3]
+        lower_right = layer**2
+        lower_left = layer**2 - layer + 1
+        upper_left = layer**2 - 2*layer + 2
+        upper_right = layer**2 - 3*layer + 3
         
-        diagonal = lower_right + lower_left + upper_left + upper_right
+        diagonal = [lower_right, lower_left, upper_left, upper_right]
         
         for n in diagonal:
             if is_prime(n):
@@ -53,9 +52,9 @@ print(find_spiral_primes())
 26241
 '''
 
-time_end = time.time()
-print("time taken", time_end-time_start)
+time_end = time.perf_counter()
+print(f"time taken = {time_end - time_start} sec")
 
 '''
-time taken 4.609025001525879
+time taken = 4.5867345 sec
 '''
