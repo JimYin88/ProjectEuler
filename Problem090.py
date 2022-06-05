@@ -4,9 +4,11 @@ Created on Jun 4, 2022
 @author: Jim Yin
 '''
 
+import time
+start_time = time.perf_counter()
+
 die_requirement = ['04', '06', '16', '25', '36', '46', '64', '81']
 die_dict = {(0,): [1], (1, ): [0]}
-
 
 for i in die_requirement:
     new_dict = {}
@@ -24,11 +26,24 @@ def die_generator2(r):
             for c in range(b+1, 7) for d in range(c+1, 8) for e in range (d+1, 9) for f in range(e+1, 10) \
             if set(r).issubset(set([a, b, c, d, e, int(str(f).replace('9', '6'))]))]    
    
-result = []
-for e, k in enumerate(die_dict):
-    combo = [(x, y) for x in die_generator2(k) for y in die_generator2(die_dict[k])]
-    result.extend(combo)
+def main():
+    result = []
+    for k in die_dict:
+        combo = [(x, y) for x in die_generator2(k) for y in die_generator2(die_dict[k])]
+        result.extend(combo)
 
-unique = set(result)
+    print(int(len(set(result))/2))
+    
+if __name__ == '__main__':
+    main()
 
-print(int(len(unique)/2))
+'''
+1217
+'''
+
+end_time = time.perf_counter()
+print(f'Time taken = {end_time - start_time} sec')
+
+'''
+Time taken = 1.100349 sec
+'''
