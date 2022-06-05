@@ -4,6 +4,9 @@ Created on Jun 1, 2022
 @author: Jim Yin
 '''
 
+import time
+start_time = time.perf_counter()
+
 def grid_number(m, n):
     return sum((m-i)*(n-j) for i in range(m) for j in range(n))
     
@@ -26,4 +29,11 @@ print(find_grid(2000000))
 
 '''
 2772
+'''
+
+end_time = time.perf_counter()
+print(f'Time taken = {end_time - start_time} sec')
+
+'''
+Time taken = 2.6672639 sec
 '''
