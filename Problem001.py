@@ -1,12 +1,15 @@
-'''
-Created on Jan 24, 2019
+# Created on Jan 24, 2019
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
 
-if __name__ == '__main__':
+def main():
     print(sum([x for x in range(1000) if x % 5 == 0 or x % 3 == 0]))
 
-'''
-233168
-'''
+
+if __name__ == '__main__':
+    main()
+
+
+# 233168
+
