@@ -1,11 +1,10 @@
-'''
-Created on Jan 27, 2019
-
-@author: Jim Yin
-'''
+# Created on Jan 27, 2019
+#
+# @author: Jim Yin
 
 import time
 start_time = time.perf_counter()
+
 
 def collatzcount(n):
     result = 1
@@ -19,6 +18,7 @@ def collatzcount(n):
             n = 3*n + 1
             result += 1
     return result
+
 
 def main():
     result = [(i, collatzcount(i)) for i in range(1, 10**6)]
@@ -36,16 +36,16 @@ def main():
     #
     # print(highestcollatz)
 
+
 if __name__ == '__main__':
     main()
 
-'''
-837799
-'''
+
+# 837799
+
 
 end_time = time.perf_counter()
 print(f'Time taken = {end_time - start_time} sec')
 
-'''
-Time taken = 38.1480969 sec
-'''
+
+# Time taken = 38.1480969 sec
