@@ -1,13 +1,10 @@
-'''
-Created on Jun 3, 2022
+# Created on Jun 3, 2022
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-
-'''
 
 import time
 
-time_start = time.time()
 
 def nine_digit_gen(n):
     ndigit = 0
@@ -24,15 +21,17 @@ def nine_digit_gen(n):
     else:
         return 0
 
-print(max(nine_digit_gen(i) for i in range(10000)))
 
-'''
-932718654
-'''
+def main():
+    print(max(nine_digit_gen(i) for i in range(10000)))
 
-time_end = time.time()
-print("time taken", time_end-time_start)
 
-'''
-time taken 0.01800370216369629
-'''
+if __name__ == '__main__':
+    time_start = time.perf_counter()
+    main()
+    time_end = time.perf_counter()
+    print(f'Time taken = {time_end - time_start} sec')
+
+
+# 932718654
+# Time taken = 0.017682200000000002 sec

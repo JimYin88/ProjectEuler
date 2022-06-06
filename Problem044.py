@@ -1,8 +1,9 @@
-'''
-Created on Jun 2, 2022
+# Created on Jun 2, 2022
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
+import time
+
 
 def generate_pentagonals(x):
     for i in range(1, x+1):
@@ -15,10 +16,19 @@ def find_pentagonals():
         for y in pentagonals:
             if x + y in pentagonals and x - y in pentagonals:
                 return x - y
-                
 
-print(find_pentagonals())
 
-'''
-5482660
-'''
+def main():
+    print(find_pentagonals())
+
+
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    main()
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
+
+
+# 5482660
+# Time taken = 0.608291 sec
+

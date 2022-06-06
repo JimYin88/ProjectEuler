@@ -1,10 +1,10 @@
-'''
-Created on Jun 1, 2022
+# Created on Jun 1, 2022
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
-
+import time
 import math
+
 
 def prime_gen(lowerlimit, upperlimit):
     num = max(2, lowerlimit)
@@ -32,7 +32,9 @@ def prime_gen(lowerlimit, upperlimit):
         
         num += 2
 
-prime_list = [x for x in prime_gen(2, 10**6)]
+
+prime_list = [x for x in prime_gen(2, 10 ** 6)]
+
 
 def circularprime(n):
     for i in range(len(str(n))):
@@ -40,8 +42,17 @@ def circularprime(n):
             return False
     return True 
 
-print(sum(1 for x in prime_list if circularprime(x)))
 
-'''
-55
-'''
+def main():
+    print(sum(1 for x in prime_list if circularprime(x)))
+
+
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    main()
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
+
+
+# 55
+# Time taken = 114.7745275 sec
