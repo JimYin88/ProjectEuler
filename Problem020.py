@@ -13,25 +13,24 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 Find the sum of the digits in the number 100!
 '''
 
-def factorial(n):
-    result = 1
-    for i in range(1, n+1):
-        result *= i
-        
-    return result
+import math
+import time
 
-# print(factorial(10))
 
 def count_digit(n):
-    s = str(n)
-    total = 0
-    for i in s:
-        total += int(i)
-    
-    return total
+    return sum(int(d) for d in str(n))
 
-print(count_digit(factorial(100)))
 
-'''
-648
-'''
+def main():
+    start_time = time.perf_counter()
+    print(count_digit(math.factorial(100)))
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
+
+
+if __name__ == '__main__':
+    main()
+
+
+# 648
+# Time taken = 6.310000000000343e-05 sec

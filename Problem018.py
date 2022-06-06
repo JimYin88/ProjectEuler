@@ -1,12 +1,9 @@
-'''
-Created on May 26, 2022
-
-@author: Jim Yin
-'''
+# Created on May 26, 2022
+#
+# @author: Jim Yin
 
 import time
 
-time_start = time.perf_counter()
 
 s = [[75],
      [95, 64],
@@ -24,30 +21,30 @@ s = [[75],
      [63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
      [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23]]
 
-path_pre = [75]
 
-for i in range(2, 16):
-    path_next = []
-    for j in range(0, i):
-        if j == 0:
-            path_next.append(int(s[i-1][j])+int(path_pre[j]))
-        elif j == i-1:
-            path_next.append(int(s[i-1][j])+int(path_pre[j-1]))
-        else:
-            path_next.append(max(int(s[i-1][j])+int(path_pre[j]), int(s[i-1][j])+int(path_pre[j-1])))
-            
-    path_pre = path_next
+def main():
+    path_pre = [75]
+    for i in range(2, 16):
+        path_next = []
+        for j in range(0, i):
+            if j == 0:
+                path_next.append(int(s[i-1][j])+int(path_pre[j]))
+            elif j == i-1:
+                path_next.append(int(s[i-1][j])+int(path_pre[j-1]))
+            else:
+                path_next.append(max(int(s[i-1][j])+int(path_pre[j]), int(s[i-1][j])+int(path_pre[j-1])))
 
-print(max(path_pre))
+        path_pre = path_next
+
+    print(max(path_pre))
 
 
-'''
-1074
-'''
+if __name__ == '__main__':
+    time_start = time.perf_counter()
+    main()
+    time_end = time.perf_counter()
+    print(f'Time taken = {time_end - time_start} sec')
 
-time_end = time.perf_counter()
-print("time taken", time_end-time_start)
 
-'''
-time taken 0.00023439999999999572
-'''
+# 1074
+# time taken = 0.00015300000000000036 sec
