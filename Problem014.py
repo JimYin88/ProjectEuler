@@ -3,7 +3,6 @@
 # @author: Jim Yin
 
 import time
-start_time = time.perf_counter()
 
 
 def collatzcount(n):
@@ -38,14 +37,11 @@ def main():
 
 
 if __name__ == '__main__':
+    start_time = time.perf_counter()
     main()
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
 
 
 # 837799
-
-
-end_time = time.perf_counter()
-print(f'Time taken = {end_time - start_time} sec')
-
-
 # Time taken = 38.1480969 sec
