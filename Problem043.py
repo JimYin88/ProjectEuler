@@ -1,7 +1,7 @@
 '''
 Created on Jan 27, 2019
 
-@author: JimYi
+@author: Jim Yin
 '''
 
 def filllength(s):

@@ -2,8 +2,14 @@
 #
 # @author: Jim Yin
 
+
+import time
+
+
 def fib_gen():
-    '''Generates a sequence of fibbonacci numbers'''
+    """
+    Generates a sequence of fibbonacci numbers
+    """
     a = 0
     b = 1
     while True:
@@ -16,7 +22,10 @@ def number_of_digit(n):
 
 
 def fib_first(ndigit):
-    '''Find the first fibbonacci number with ndigit'''
+    """
+    Find the first fibbonacci number with ndigit
+    """
+
     counter01 = 0     
     for x in fib_gen():
         counter01 += 1
@@ -30,7 +39,11 @@ def main():
 
 
 if __name__ == '__main__':
+    start_time = time.perf_counter()
     main()
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
 
 
 # 4782
+# Time taken = 0.0364492 sec

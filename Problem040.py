@@ -1,22 +1,27 @@
-'''
-Created on May 31, 2022
+# Created on May 31, 2022
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
 
-def d_num(digit):
-    decimal_number_string = ''
-    string_length = 0
+def dnum(digit):
+    dec_num_str = ''
+    str_len = 0
     num = 1
-    while string_length <= digit:
-        decimal_number_string = decimal_number_string + str(num)
+    while str_len <= digit:
+        dec_num_str = dec_num_str + str(num)
         num += 1
-        string_length += len(str(num))
+        str_len += len(str(num))
         
-    return decimal_number_string
+    return dec_num_str
 
-d = 1000000
-print(int(d_num(d)[0])*int(d_num(d)[9])*int(d_num(d)[99])*int(d_num(d)[999])*int(d_num(d)[9999])*int(d_num(d)[99999]))
+
+def main():
+    d = 1000000
+    print(int(dnum(d)[0])*int(dnum(d)[9])*int(dnum(d)[99])*int(dnum(d)[999])*int(dnum(d)[9999])*int(dnum(d)[99999]))
+
+
+if __name__ == '__main__':
+    main()
 
 
 '''
