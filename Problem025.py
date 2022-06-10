@@ -8,7 +8,7 @@ import time
 
 def fib_gen():
     """
-    Generates a sequence of fibbonacci numbers
+    Generates a sequence of fibonacci numbers
     """
     a = 0
     b = 1
@@ -21,15 +21,15 @@ def number_of_digit(n):
     return len(str(n))
 
 
-def fib_first(ndigit):
+def fib_first(n):
     """
-    Find the first fibbonacci number with ndigit
+    Find the first fibonacci number with ndigit
     """
 
     counter01 = 0     
     for x in fib_gen():
         counter01 += 1
-        if number_of_digit(x) >= ndigit:
+        if number_of_digit(x) >= n:
             print(counter01)
             break
 

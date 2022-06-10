@@ -22,6 +22,7 @@ if __name__ == '__main__':
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 
+
 # 1366
 # Time taken = 9.409999999999974e-05 sec
 

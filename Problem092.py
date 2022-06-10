@@ -1,13 +1,12 @@
-'''
-Created on Jun 2, 2022
+# Created on Jun 2, 2022
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
 
 import time
-time_start = time.perf_counter()
 
 square_digit_chain_dict = {}
+
 
 def square_digit_chain(n):
     d = sum(int(d)**2 for d in str(n))
@@ -19,19 +18,18 @@ def square_digit_chain(n):
     square_digit_chain_dict[d] = nn
     return d, nn
 
+
 def main():
     print(sum(1 for i in range(1, 10**7) if square_digit_chain(i)[1] == 89))
 
+
 if __name__ == '__main__':
+    start_time = time.perf_counter()
     main()
+    end_time = time.perf_counter()
+    print(f"Time taken = {round(end_time - start_time, 2)} sec")
 
-'''
-8581146
-'''
 
-time_end = time.perf_counter()
-print(f"Time taken = {round(time_end - time_start, 2)} sec")
+# 8581146
+# Time taken = 36.74 sec
 
-'''
-Time taken = 34.9 sec
-'''  

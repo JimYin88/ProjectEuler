@@ -1,19 +1,37 @@
-'''
-Created on Jun 2, 2022
+# Created on Jun 2, 2022
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
+import time
 
 def triangle(n):
+    """
+    :param n: nth member of the triangle number series
+    :return: value of the nth member
+    """
     return int(n*(n+1)/2)
 
+
 def pentagonal(n):
+    """
+    :param n: nth member of the pentagonal number series
+    :return: value of the nth member
+    """
     return int(n*(3*n -1)/2)
 
+
 def hexagonal(n):
+    """
+    :param n: nth member of the hexagonal number series
+    :return: value of the nth member
+    """
     return int(n*(2*n - 1))
 
-def find_t_p_h():
+
+def prob_045():
+    """
+    :return: the solution to Problem 45 in Project Euler
+    """
     triangle_set = {1}
     pentagonal_set = {1}
     hexagonal_set = {1}
@@ -26,9 +44,14 @@ def find_t_p_h():
             return triangle(n)
         else:
             n += 1
-            
-print(find_t_p_h())
 
-'''
-1533776805
-'''
+
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    print(prob_045())
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
+
+
+# 1533776805
+# Time taken = 0.09843769999999999 sec
