@@ -26,7 +26,7 @@ def pro_031():
                 number_of_c += 1
 
         result_old = result_next
-
+        
     print(result_old[0])
 
 
