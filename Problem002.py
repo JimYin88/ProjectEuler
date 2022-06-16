@@ -9,9 +9,10 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 # find the sum of the even-valued terms.
 
+import time
 
-def main():
-    result = 0
+
+def prob_002():
     a = 1
     b = 2
     result = 2
@@ -24,8 +25,12 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    start_time = time.perf_counter()
+    prob_002()
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
 
 
 # 4613732
+# Time taken = 3.449999999999287e-05 sec
 
