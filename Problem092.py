@@ -2,11 +2,9 @@
 #
 # @author: Jim Yin
 
-
 import time
 
 square_digit_chain_dict = {}
-
 
 def square_digit_chain(n):
     d = sum(int(d)**2 for d in str(n))
@@ -28,7 +26,7 @@ if __name__ == '__main__':
     main()
     end_time = time.perf_counter()
     print(f"Time taken = {round(end_time - start_time, 2)} sec")
-
+    
 
 # 8581146
 # Time taken = 36.74 sec
