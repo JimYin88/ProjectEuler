@@ -13,7 +13,8 @@ Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain
 def permuted_multiples():
     n = 10000
     while True:
-        if (len(str(n)) == len(str(6*n))) and set(str(n)) == set(str(2*n)) and set(str(n)) == set(str(3*n)) and set(str(n)) == set(str(4*n)) and set(str(n)) == set(str(5*n)) and set(str(n)) == set(str(6*n)):
+        if (len(str(n)) == len(str(6*n))) and set(str(n)) == set(str(2*n)) and set(str(n)) == set(str(3*n)) and set(str(n)) == set(str(4*n)) \
+        and set(str(n)) == set(str(5*n)) and set(str(n)) == set(str(6*n)):
             return n 
         else:
             n += 1
