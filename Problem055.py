@@ -49,13 +49,13 @@ def lychrel_check(n):
     return True
 
 
-def main():
+def prob_055():
     print(sum(1 for n in range(10000) if lychrel_check(n)))
 
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    main()
+    prob_055()
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 
