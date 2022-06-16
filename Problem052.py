@@ -9,8 +9,10 @@ It can be seen that the number, 125874, and its double, 251748, contain exactly 
 
 Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain the same digits.
 '''
+import time
 
-def permuted_multiples():
+
+def prob_052():
     n = 10000
     while True:
         if (len(str(n)) == len(str(6*n))) and set(str(n)) == set(str(2*n)) and set(str(n)) == set(str(3*n)) and set(str(n)) == set(str(4*n)) \
@@ -19,8 +21,13 @@ def permuted_multiples():
         else:
             n += 1
             
-print(permuted_multiples())
+            
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    print(prob_052())
+    end_time = time.perf_counter()
+    print(f'Time take = {end_time - start_time} sec')
 
-'''
-142857
-'''
+
+# 142857
+# Time take = 0.14630569999999998 sec
