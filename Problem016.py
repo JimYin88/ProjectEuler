@@ -2,23 +2,21 @@
 #
 # @author: Jim Yin
 
-
 # 2**15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
 #
 # What is the sum of the digits of the number 2**1000?
 
-
 import time
 
 
-def main():
+def prob_016():
     n_string = str(2 ** 1000)
     print(sum(int(d) for d in n_string))
 
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    main()
+    prob_016()
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 

@@ -1,10 +1,10 @@
-'''
-Created on Feb 2, 2019
+# Created on Feb 2, 2019
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
-
+import time
 import math
+
 
 def prime_gen(lowerlimit, upperlimit):
     num = max(2, lowerlimit)
@@ -32,7 +32,9 @@ def prime_gen(lowerlimit, upperlimit):
         
         num += 2
 
+
 prime_list = [x for x in prime_gen(2, 10**5)]
+
 
 def odd_composite(num):
     if num in prime_list:
@@ -43,7 +45,8 @@ def odd_composite(num):
         for i in range(1, int(math.sqrt(num/2)+1)):
             if p + 2*i**2 == num:
                 return False
- 
+
+
 def find_smallest_odd_composite():
     num = 7
     while True:
@@ -52,8 +55,14 @@ def find_smallest_odd_composite():
         else:
             num += 2
 
-print(find_smallest_odd_composite())
 
-'''
-5777
-'''
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    print(find_smallest_odd_composite())
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
+
+
+# 5777
+# Time taken = 1.9498045000000002 sec
+
