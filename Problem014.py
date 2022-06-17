@@ -19,7 +19,7 @@ def collatzcount(n):
     return result
 
 
-def main():
+def prob_014():
     result = [(i, collatzcount(i)) for i in range(1, 10**6)]
     highest_collatzcount = sorted(result, key = lambda x: x[1])
     print(highest_collatzcount[-1][0])
@@ -38,7 +38,7 @@ def main():
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    main()
+    prob_014()
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 
