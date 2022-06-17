@@ -31,7 +31,6 @@ def factors(n):
     return result
 
 
-
 def prime_gen(lowerlimit, upperlimit):
     num = max(2, lowerlimit)
     if num == 2:
@@ -93,7 +92,6 @@ def find_permutation(n):
 
 def totient_ratio(n):
     return n/totient(n)
-
 
 
 def prob_070(upperlimit, lowerlimit, return_dict):
