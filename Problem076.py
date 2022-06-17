@@ -11,14 +11,14 @@ def prob_076():
     rem_prev = {100: 1}
 
     for i in range(99, 0, -1):
-        rem_next = defaultdict(lambda: 0)
+        rem_next = defaultdict(int)
         for rem in rem_prev:
             num_subtract = 0
             while rem - num_subtract*i >= 0:
                 rem_next[rem - num_subtract*i] += rem_prev[rem]
                 num_subtract += 1
 
-        rem_consolidate = defaultdict(lambda: 0)
+        rem_consolidate = defaultdict(int)
         for k in rem_next:
             rem_consolidate[k] += rem_next[k]
 

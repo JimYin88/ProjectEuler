@@ -12,11 +12,11 @@ def pro_031():
     :return: Answer: 73682
     """
     coins =[200, 100, 50, 20, 10, 5, 2, 1]
-    result_old = defaultdict(lambda: 0)
+    result_old = defaultdict(int)
     result_old[200] = 1    
 
     for c in coins:
-        result_next = defaultdict(lambda: 0)
+        result_next = defaultdict(int)
         for rem in result_old:
             number_of_c = 0
             while rem - c*number_of_c >= 0:
