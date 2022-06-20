@@ -2,7 +2,6 @@
 #
 # @author: Jim Yin
 
-
 import time
 
 
@@ -25,22 +24,21 @@ def fib_first(n):
     """
     Find the first fibonacci number with ndigit
     """
-
-    counter01 = 0     
+    counter01 = 1     
     for x in fib_gen():
-        counter01 += 1
         if number_of_digit(x) >= n:
-            print(counter01)
-            break
+            return counter01
+        else:
+            counter01 += 1
 
 
-def main():
-    fib_first(1000)
+def prob_025():
+    return fib_first(1000)
 
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    main()
+    print(prob_025())
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 
