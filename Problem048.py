@@ -21,13 +21,13 @@ def self_power_last_digits(n):
     return total
 
 
-def main():
+def prob_048():
     print(sum(self_power_last_digits(i) for i in range(1, 1001)) % 10000000000)
 
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    main()
+    prob_048()
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 
