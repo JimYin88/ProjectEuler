@@ -5,31 +5,29 @@
 import time
 
 
-def find_permutation(max_x):
-    perm_storage = {}
-    x = 1
-    while x <= max_x:
-        perm_storage[x] = ''.join(sorted(str(x**3)))
-        x += 1
+def prob_062(number_permutation):
+    cubic_cache = {}
+    num = 1
+    while True:
+        cubic = num**3
+        permute = ''.join(sorted(str(cubic)))
+        if permute not in cubic_cache:
+            cubic_cache[permute] = [cubic]
+        else:
+            cubic_cache[permute].append(cubic)   
             
-    return perm_storage
-
-
-def prob_062():
-    p = find_permutation(10000)
-
-    for i in p:
-        if sum(1 for j in p if p[i] == p[j]) == 5:
-            print(i**3)
-            break
+        if len(cubic_cache[permute]) == number_permutation:
+            return min(cubic_cache[permute])
+        else:
+            num += 1
 
 
 if __name__ == '__main__':
     time_start = time.perf_counter()
-    prob_062()
+    print(prob_062(5))
     time_end = time.perf_counter()
-    print(f"time taken = {time_end - time_start} sec")
+    print(f"Time taken = {time_end - time_start} sec")
 
 
 # 127035954683
-# time taken = 5.9373446 sec
+# Time taken = 0.016483499999999984 sec
