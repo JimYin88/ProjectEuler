@@ -18,13 +18,13 @@ def find_pentagonals():
                 return x - y
 
 
-def main():
+def prob_044():
     print(find_pentagonals())
 
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    main()
+    prob_044()
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 

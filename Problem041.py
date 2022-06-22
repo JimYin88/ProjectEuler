@@ -39,7 +39,7 @@ def pandigital_prime(n):
 
 def prob_041():
     prime_list = [i for i in range(1_000_001, 10_000_000, 2) if isPrime(i)]
-    # Need to check only 7 digits prime since 8 and 9-digits pandigital are
+    # Need to check only 7 digits prime since 8 and 9-digits pandigitals are
     # divisible by 3.
 
     for i in (prime_list[::-1]):
