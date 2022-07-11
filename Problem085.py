@@ -1,14 +1,13 @@
-'''
-Created on Jun 1, 2022
-
-@author: Jim Yin
-'''
+# Created on Jun 1, 2022
+#
+# @author: Jim Yin
 
 import time
-start_time = time.perf_counter()
+
 
 def grid_number(m, n):
     return sum((m-i)*(n-j) for i in range(m) for j in range(n))
+    
     
 def find_grid(rect):
     min_diff = rect
@@ -23,17 +22,17 @@ def find_grid(rect):
                 min_diff = abs(rect_calc - rect)
             n += 1
 
-    return m_diff*n_diff 
+    return m_diff*n_diff
 
-print(find_grid(2000000))
+
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    print(find_grid(2000000))
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
+
 
 '''
 2772
-'''
-
-end_time = time.perf_counter()
-print(f'Time taken = {end_time - start_time} sec')
-
-'''
 Time taken = 2.6672639 sec
 '''
