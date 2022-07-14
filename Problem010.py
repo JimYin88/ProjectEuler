@@ -1,28 +1,17 @@
-'''
-Created on Jan 27, 2019
+# Created on Jan 27, 2019
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
+from sympy import isprime
+import time
 
-def isPrime(n):
-    if n == 1 or n == 4:
-        return False 
-    elif n == 2 or n == 3:
-        return True
-    elif n % 2 == 0:
-        return False
-    else:
-        for i in range(3, int(n**0.5)+1, 2):
-            if n%i==0:
-                return False
-    return True
 
 def prime_gen(upper_limit):
     # start at 5 and use a step of 2
     results = 5
     for i in range(5, upper_limit, 2):
         # loop from 2 to i
-        if isPrime(i):
+        if isprime(i):
             results += i
         else:
             # if we get here we completed our inner loop
@@ -31,8 +20,12 @@ def prime_gen(upper_limit):
     return results
             
 
-print(sum((i for i in range(5, 2000000, 2) if isPrime(i)), 5))
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    print(sum((i for i in range(5, 2000000, 2) if isprime(i)), 5))
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
 
-'''
-142913828922
-'''
+
+# 142913828922
+# Time taken = 3.8082388 sec
