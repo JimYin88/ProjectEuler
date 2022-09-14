@@ -11,9 +11,9 @@ def pro_031():
     Find the solution of Problem 31 in Project Euler.
     :return: Answer: 73682
     """
-    coins =[200, 100, 50, 20, 10, 5, 2, 1]
+    coins = [200, 100, 50, 20, 10, 5, 2, 1]
     result_old = defaultdict(int)
-    result_old[200] = 1    
+    result_old[200] = 1
 
     for c in coins:
         result_next = defaultdict(int)
@@ -24,7 +24,7 @@ def pro_031():
                 number_of_c += 1
 
         result_old = result_next
-        
+
     print(result_old[0])
 
 
