@@ -1,45 +1,39 @@
-'''
-Created on Jan 28, 2019
-
-@author: Jim Yin
-'''
-
-'''
-Consider quadratic Diophantine equations of the form:
-x2 - Dy2 = 1
-For example, when D=13, the minimal solution in x is 6492 – 13×1802 = 1.
-It can be assumed that there are no solutions in positive integers when D is square.
-By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the following:
-32 – 2×22 = 1
-22 – 3×12 = 1
-92 – 5×42 = 1
-52 – 6×22 = 1
-82 – 7×32 = 1
-Hence, by considering minimal solutions in x for D ≤ 7, the largest x is obtained when D=5.
-Find the value of D ≤ 1000 in minimal solutions of x for which the largest value of x is obtained.
-'''
+# Created on April 19, 2025
+#
+# @author: Jim Yin
 
 
-d = (x for x in range(2, 1001) if x not in [y*y for y in range(2,40)])
-
-def diophantinesolver(d):
-    x = 2
-    y = int(((x**2 - 1)/d)**0.5)
-    while x**2 - d * y**2 != 1:
-        x += 1
-        y = int(((x**2 - 1)/d)**0.5)
-    return x
+import time
+from sympy.solvers.diophantine.diophantine import diop_DN
 
 
-highestd = 2
-highestx = 3
+def prob_066(limit = 1000):
 
-for i in d:
-    x = diophantinesolver(i)
-    if x > highestx:
-        highestx = x
-        highestd = i
-    
-print(highestx, highestd)
+    squares = [i**2 for i in range(1, int(limit**(1/2)) + 1)]
+    d_candidates = [i for i in range(1, limit + 1) if i not in squares]
+
+    result = []
+    for d in d_candidates:
+        ans = diop_DN(d, 1)
+        result.append([d, ans[0][0]])
+
+    d = 0
+    max_value = 0
+
+    for i in result:
+        if i[1] > max_value:
+            d = i[0]
+            max_value = i[1]
+
+    return d
 
 
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    print(prob_066())
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
+
+
+# 661
+# Time taken = 12.184974400006467 sec
