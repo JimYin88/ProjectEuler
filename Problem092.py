@@ -1,6 +1,7 @@
-# Created on Jun 2, 2022
+# Created on December 19, 2014
 #
 # @author: Jim Yin
+
 
 import time
 
@@ -9,6 +10,7 @@ square_digit_chain_dict = {1: 1, 89: 89}
 
 
 def square_digit_chain(n):
+
     d = sum(int(d) ** 2 for d in str(n))
     if d in square_digit_chain_dict:
         return square_digit_chain_dict[d]
