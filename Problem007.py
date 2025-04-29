@@ -1,13 +1,11 @@
-'''
-Created on Jan 27, 2019
+# Created on Jan 27, 2019
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
 
 import math
 import time
 
-time_start = time.perf_counter()
 
 def prime_nth_term(n):
     if n == 1:
@@ -21,9 +19,9 @@ def prime_nth_term(n):
 
     while primecount < n:
         isprime = True
-        
+
         for x in range(3, int(math.sqrt(target_num)) + 1, 2):
-            if target_num % x == 0: 
+            if target_num % x == 0:
                 isprime = False
                 break
         
@@ -34,15 +32,13 @@ def prime_nth_term(n):
         
         target_num += 2
 
-print(prime_nth_term(10001))
 
-'''
-104743
-'''
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    print(prime_nth_term(10001))
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
 
-time_end = time.perf_counter()
-print(f"time taken = {time_end-time_start} sec")
 
-'''
-time taken 0.12167109999999999 sec
-'''
+# 104743
+# Time taken = 0.1003223000006983 sec
