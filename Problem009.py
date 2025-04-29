@@ -13,8 +13,8 @@ import time
 
 
 def prob_009():
-    for i in range(1,500):
-        for j in range(i,500):
+    for i in range(1, 500):
+        for j in range(i, 500):
             k = (i*i + j*j)**0.5
             if i + j + k == 1000:
                 return int(i*j*k)
@@ -28,4 +28,4 @@ if __name__ == '__main__':
 
 
 # 31875000
-# Time taken = 0.037695599999999996 sec
+# Time taken = 0.021523000003071502 sec
