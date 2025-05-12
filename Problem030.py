@@ -1,4 +1,4 @@
-# Created on May 25, 2022
+# Created on December 12, 2014
 #
 # @author: Jim Yin
 
@@ -22,16 +22,16 @@ def fifth_powers_of_digits(n):
     return n == sum(int(i)**5 for i in str(n))
 
 
-def main():
-    print(sum(i for i in range(2, 6*9**5) if fifth_powers_of_digits(i)))
+def prob_030():
+    return sum(i for i in range(2, 6*9**5) if fifth_powers_of_digits(i))
 
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    main()
+    print(prob_030())
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 
 
 # 443839
-# Time taken = 1.0630138999999998 sec
+# Time taken = 0.9498548000119627 sec
