@@ -1,4 +1,4 @@
-# Created on Jan 27, 2019
+# Created on December 18, 2014
 #
 # @author: Jim Yin
 
@@ -20,9 +20,9 @@ def number_of_digit(n):
     return len(str(n))
 
 
-def fib_first(n):
+def prob_025(n):
     """
-    Find the first fibonacci number with ndigit
+    Find the first fibonacci number with n digits
     """
     counter01 = 1     
     for x in fib_gen():
@@ -32,16 +32,12 @@ def fib_first(n):
             counter01 += 1
 
 
-def prob_025():
-    return fib_first(1000)
-
-
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    print(prob_025())
+    print(prob_025(n=1000))
     end_time = time.perf_counter()
     print(f'Time taken = {end_time - start_time} sec')
 
 
 # 4782
-# Time taken = 0.0364492 sec
+# Time taken = 0.02844080002978444 sec
