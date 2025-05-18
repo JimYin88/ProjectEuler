@@ -1,13 +1,11 @@
-'''
-Created on Jun 2, 2022
+# Created on Jun 2, 2022
+#
+# @author: Jim Yin
 
-@author: Jim Yin
-'''
 
 import math
 import time
 
-time_start = time.time()
 
 def prime_gen(lowerlimit, upperlimit):
     num = max(2, lowerlimit)
@@ -35,9 +33,11 @@ def prime_gen(lowerlimit, upperlimit):
         
         num += 2
 
+
 prime_list = [x for x in prime_gen(2, 10**4)]
 
-def find_summation_value(num_ways):
+
+def prob_077(num_ways):
     target = 10
     while True:
         val_initial = {target: 1}
@@ -73,16 +73,13 @@ def find_summation_value(num_ways):
         else:
             return target
 
-print(find_summation_value(5000))
 
-'''
-71
-'''
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    print(prob_077(num_ways=5000))
+    end_time = time.perf_counter()
+    print(f'Time taken = {end_time - start_time} sec')
 
-time_end = time.time()
-print("time taken", time_end-time_start)
 
-'''
-time taken 0.039565324783325195
-'''
-        
+# 71
+# Time taken = 0.019228700009989552 sec
